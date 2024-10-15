@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodejs-intive-redhat-app8
+  labels:
+    app: nodejs-intive-redhat-app8
+    app.kubernetes.io/component: backstage
+    backstage.io/kubernetes-id: demo-dev
+    argocd.argoproj.io/instance: nodejs-intive-redhat-app8
+    argocd/app-name: nodejs-intive-redhat-app8
+    argocd/app-selector: nodejs-intive-redhat-app8
+spec:
+  ports:
+    - name: http-3000
+      port: 3000
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: nodejs-intive-redhat-app8
